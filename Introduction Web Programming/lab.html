@@ -6,14 +6,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+    }
+    
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+    }
+    
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+    
+    .pagination a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: 2s;
+    }
+    
+    .pagination a:hover {
+        background-color: red;
+    }
+    
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 200px;
+        background-color: #f1f1f1;
+    }
+    
+    li a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+    }
+    
+    li a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+    
+    li a:hover:not(.active) {
+        background-color: #555;
+        color: white;
+    }
+    
+    .dropbtn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+    
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #f1f1f1
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+    }
+</style>
+</style>
 
 <body>
     <nav style="position: fixed; background-color: darkgray; padding: 10px; width: 100%; box-shadow: 5px 10px #888888; ;">
-        <span>Lab 1 : </span><span><a href="#attribute" style="text-decoration: none;">1. attribute</a></span> <span><a href="#differentuation" style="text-decoration: none;">2. differentuation tag <span><a href="#input" style="text-decoration: none;">3. input type tag</a> 
+        <span>Lab 1 : </span><span><a href="#attribute" style="text-decoration: none;">1. attribute</a></span> <span><a href="#differentuation" style="text-decoration: none;">1.2 differentuation tag <span><a href="#input" style="text-decoration: none;">1.3 input type tag</a> 
 </span> <br><span>Lab 2 : </span> <span><a href="#lab2" style="text-decoration: none;"> strong lable del b em mark i sub sup  </a>
+    <br><span>Lab 3 : </span> <span><a href="#lab3" style="text-decoration: none;"> Tooltips : Pagination : Navigatior bar : dropdown : </a>
+        <br><span>Lab 4 : </span> <span><a href="#lab4" style="text-decoration: none;"> เว็บ กระทู้ หรือ การเรียนการสอนมา 1 เว็บ
+            ให้ส่ง link เว็บและเขียนสรุปคราวๆว่าจะว่างโครงสร้างในการเขียนเว็บอย่างไร
+             </a>
+    
     </nav>
     <section style="background-color: rgba(0, 0, 0, 0.14); padding: 1rem;">
-        <h1>1. attribute</h1>
+
+        <h1 style="margin-top: 100px;">1.1 attribute</h1>
         <div style="background-color: rgba(0, 0, 0, 0.10); padding: 10px; ">
             <h1 id="attribute">Heading1</h1>
             <h2>Heading2</h2>
@@ -274,6 +384,95 @@
 
         </div>
 </section>
-    </body>
+
+
+<br><section style="background-color: rgba(0, 0, 0, 0.14); padding: 1rem;" id="lab3">
+    <h2>Lab 3 Tooltips : Pagination : Navigatior bar : dropdown :</h2>
+    <br>
+    <div style="background-color: rgba(0, 0, 0, 0.10); padding: 10px; ">
+        <h2>Tooltips</h2>
+        <div class="tooltip">ว่างเมาส์ที่นี้เพื่อแสดงตัวอย่าง Tooltips
+            <span class="tooltiptext">Tooltip text</span>
+        </div>
+        <p style=" color: #790000; ">เครื่องมือมักใช้เพื่อระบุข้อมูลเพิ่มเติมเกี่ยวกับบางสิ่งเมื่อผู้ใช้เลื่อนตัวชี้เมาส์ไปที่องค์ประกอบ</p>
+        </div>
+
+        <div style="background-color: rgba(0, 0, 0, 0.10); padding: 10px; ">
+            <h2>Pagination</h2>
+            <div class="pagination">
+                <a href="#">&laquo;</a>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">&raquo;</a>
+            </div><br>
+            <p style=" color: #790000; ">การแบ่งหน้า เช่น หากคุณมีเว็บไซต์ที่มีหลายหน้าคุณอาจต้องการเพิ่มการแบ่งหน้าในแต่ละหน้า</p>
+        </div>
+
+        <div style="background-color: rgba(0, 0, 0, 0.10); padding: 10px; ">
+            <h2>Navigatior bar</h2>
+            <div>
+                <ul>
+                    <li><a class="active" href="#home">Home</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+            <p style=" color: #790000; "> หรือแถบนำทาง เช่น เมนู หน้าติดต่อ หน้าแรก หน้าโพส ไรแบบนี้ </p>
+        </div>
+
+        <div style="background-color: rgba(0, 0, 0, 0.10); padding: 10px; ">
+            <h2>Dropdown</h2>
+            <div class="dropdown">
+                <button class="dropbtn">Dropdown</button>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+                <p style=" color: #790000; ">กล่องดรอปดาวน์ที่ปรากฏขึ้นเมื่อผู้ใช้เลื่อนเมาส์ไปที่องค์ประกอบ ซึ่งผู้ใช้สามารถเลือกหนึ่งค่าจากรายการที่กำหนดไว้ได้
+                </p>
+            </div>
+            </section>
+
+
+            <section style="background-color: rgba(0, 0, 0, 0.14); padding: 1rem;" id="lab4">
+                <h2> Lab 4 เว็บ กระทู้ หรือ การเรียนการสอนมา 1 เว็บ ให้ส่ง link เว็บและเขียนสรุปคราวๆว่าจะว่างโครงสร้างในการเขียนเว็บอย่างไร </h2>
+                <div style="background-color: rgba(0, 0, 0, 0.10); padding: 10px; ">
+                </div> <img src="https://image.prntscr.com/image/dAM4wbbwTJuqzSsnGqKT6A.jpeg" alt="" width="70%">
+                <p> <a href=" https://www.gamemonday.com/ "> https://www.gamemonday.com/ </a>เว็บที่ยกมา</p>
+                <p>หลักจากได้อ่าน slide ครั่งที่เเล้ว develop ต้องดูตั่งแต่ ftp hosting ผมจึงได้ดูตั่งแต่ แพลตฟอร์มที่ใช้เเล้ว ผมไปดูๆว่าเขาได้ใช้ wordpress.org ใน้การสร้างเว็บ และมี google analytics ในการวิเคราะห์ มี google adsent ในการหารายได้ google tag
+                    ในการทำ SEO และผมได้ศึกษา wordpress host สักพักหนึง</p>
+                <p>โครงสร้าง on web</p>
+                <ul style="padding: 10px; width: 70%; ">
+
+                    <li>1. จะมี logo site น้ำหน้าอยู่บนสุด</li><br>
+                    <li>2. ต่อมาจะมี nav เมนู เช่นข่าวเกม * ในโหมด mobile จะเป็นแบบ dropdown</li><br>
+                    <li>3. มีปุ่ม search อยู่ข้างๆ ไว้ค้นหา</li><br>
+                    <li>4. จะมี Main และลง Post ข่าวล่าสุดลงไว้</li><br>
+                    <li>5. จะ side จะติดโฆษณา adside ไว้</li><br>
+                    <li>5. Footer จะเป็นพืนหลังสีดำ และ ตัวอักษร สีเหลือง กับ สีขาว ทำไห้เห็นตัวอักษรได้ชัดเจน</li>
+                </ul>
+                <h2>ตัวอย่างเว็บที่ผมได้ศึกษาจาก บทความ และลองทำอาจไม่100% </h2>
+                <img src="https://image.prntscr.com/image/AxrdCAXRQaSo30E5rtCBWg.jpeg" alt="" width="70%">
+                <p> <a href=" https://www.techbanban.com " target="blank"> https://www.techbanban.com  </a>ตัวอย่างเว็บที่ผมได้ทำเอาไว</p>
+
+
+
+        </div>
+
+
+
+        </section>
+
+
+</body>
+
+
+
 
 </html>
